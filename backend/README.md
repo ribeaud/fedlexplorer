@@ -14,7 +14,8 @@ cd api
 virtualenv env
 . env/bin/activate
 pip install -Ur requirements.txt
-python server.py
+cd ../data
+python ../backend/server.py
 ```
 
 (Alternatively: use [Poetry](https://python-poetry.org/docs/) or [Pipenv](https://pipenv.pypa.io/en/latest/))
