@@ -1,11 +1,12 @@
+import 'package:fedlexplorer/results.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-void main() => runApp(const MyApp());
+void main() => runApp(const MainApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,40 +18,29 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        body: const MyCustomForm(),
+        body: const FedlexForm(),
       ),
     );
   }
 }
 
-// Create a Form widget.
-class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({super.key});
+class FedlexForm extends StatefulWidget {
+  const FedlexForm({super.key});
 
   @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
+  FedlexFormState createState() {
+    return FedlexFormState();
   }
 }
 
-// Create a corresponding State class.
-// This class holds data related to the form.
-class MyCustomFormState extends State<MyCustomForm> {
-  // Create a global key that uniquely identifies the Form widget
-  // and allows validation of the form.
-  //
-  // Note: This is a GlobalKey<FormState>,
-  // not a GlobalKey<MyCustomFormState>.
+class FedlexFormState extends State<FedlexForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String> items = List<String>.generate(100, (i) => 'Item $i');
 
   getData() async {
-    final response = await http.get(Uri.parse(
-        'https://samples.openweathermap.org/data/2.5/forecast/hourly?lat=35&lon=139&appid=b1b15e88fa797225412429c1c50c122a1'));
+    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/sample'));
     if (response.statusCode == 200) {
-      var data = jsonDecode(response.body);
-      print(data);
-      return data;
+      return jsonDecode(response.body);
     }
   }
 
@@ -74,15 +64,12 @@ class MyCustomFormState extends State<MyCustomForm> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
-              onPressed: () {
-                // Validate returns true if the form is valid, or false otherwise.
+              onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
-                  );
-                  getData();
+                  var data = await getData();
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ResultsPage(data: data);
+                  }));
                 }
               },
               child: const Text('Submit'),
