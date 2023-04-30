@@ -13,9 +13,14 @@ class MainApp extends StatelessWidget {
     const appTitle = 'FEDLEXplorer';
 
     return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.red, scaffoldBackgroundColor: Colors.white),
       title: appTitle,
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.home),
+          ),
           title: const Text(appTitle),
         ),
         body: const FedlexForm(),
@@ -35,7 +40,6 @@ class FedlexForm extends StatefulWidget {
 
 class FedlexFormState extends State<FedlexForm> {
   final _formKey = GlobalKey<FormState>();
-  final List<String> items = List<String>.generate(100, (i) => 'Item $i');
 
   getData() async {
     final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/sample'));
