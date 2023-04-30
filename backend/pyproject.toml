@@ -1,15 +1,16 @@
 [tool.poetry]
 name = "fedlexplorer"
 version = "0.1.0"
-description = "Open Legal Lab Fedlex App"
-authors = ["Your Name <you@example.com>"]
+description = "OpenLegalLab Fedlex App"
+authors = []
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.5,<4"
+python = ">=3.7,<4"
 falcon = "^3.1.1"
-
+frictionless = "^4"
+orjson = "^3.8.11"
 
 [build-system]
 requires = ["poetry-core"]

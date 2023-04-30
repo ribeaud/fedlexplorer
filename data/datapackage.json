@@ -1,0 +1,10 @@
+{
+    "name": "datapackage",
+    "resources": [
+        {
+            "name": "sample",
+            "path": "sample.json",
+            "profile": "sparql-json-resource"
+        }
+    ]
+}
