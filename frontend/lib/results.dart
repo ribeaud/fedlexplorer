@@ -72,8 +72,7 @@ class _ResultsPageState extends State<ResultsPage> {
             );
           },
           body: ListTile(
-            title: Text(item.dateApplicability),
-            subtitle: Text("${item.dateApplicability}, ${item.rs}, ${item.droit}"),
+            title: Text("${item.dateApplicability}, ${item.rs}, ${item.droit}"),
           ),
           isExpanded: item.isExpanded,
         );
