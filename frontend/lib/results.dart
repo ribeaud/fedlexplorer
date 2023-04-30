@@ -4,14 +4,23 @@ class Item {
   Item({
     required this.dateApplicability,
     required this.title,
+    required this.rs,
+    required this.droit,
     this.isExpanded = false,
   });
 
   String dateApplicability;
   String title;
+  String rs;
+  String droit;
   bool isExpanded;
 
-  static Item fromJson(json) => Item(title: json['title'], dateApplicability: json['dateApplicability']);
+  static Item fromJson(json) => Item(
+        title: json['title'],
+        dateApplicability: json['dateApplicability'],
+        rs: json['rs'],
+        droit: json['droit'],
+      );
 }
 
 List<Item> generateItems(data) {
@@ -59,10 +68,13 @@ class _ResultsPageState extends State<ResultsPage> {
         return ExpansionPanel(
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
-              title: Text(item.dateApplicability),
+              title: Text(item.title),
             );
           },
-          body: ListTile(title: Text(item.title)),
+          body: ListTile(
+            title: Text(item.dateApplicability),
+            subtitle: Text("${item.dateApplicability}, ${item.rs}, ${item.droit}"),
+          ),
           isExpanded: item.isExpanded,
         );
       }).toList(),
