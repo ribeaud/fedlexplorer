@@ -2,9 +2,13 @@
     "name": "datapackage",
     "resources": [
         {
-            "name": "sample",
+            "name": "inkrafttretten",
             "path": "sample.json",
-            "profile": "sparql-json-resource"
+            "profile": "sparql-json-resource",
+            "sources": [{
+                "title": "SPARQL query",
+                "path": "inkrafttretten.sparql"
+            }]
         }
     ]
 }
