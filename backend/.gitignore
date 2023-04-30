@@ -1,0 +1,16 @@
+# Uncomment this to allow Pipenv to manage your Python environment:
+Pipfile*
+
+# Common ignores
+node_modules/
+package-lock.json
+yarn.lock
+*.py[cod]
+coverage.xml
+profile/*.prof
+
+# Compressed assets
+*.gz
+
+# C extensions
+*.so
