@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
+String truncateWithEllipsis(int cutoff, String myString) {
+  return (myString.length <= cutoff) ? myString : '${myString.substring(0, cutoff)}...';
+}
+
 class Item {
   Item({
     required this.dateApplicability,
     required this.title,
+    required this.shortTitle,
     required this.rs,
     required this.droit,
     this.isExpanded = false,
@@ -11,11 +16,13 @@ class Item {
 
   String dateApplicability;
   String title;
+  String shortTitle;
   String rs;
   String droit;
   bool isExpanded;
 
   static Item fromJson(json) => Item(
+        shortTitle: truncateWithEllipsis(30, json['title']),
         title: json['title'],
         dateApplicability: json['dateApplicability'],
         rs: json['rs'],
@@ -68,11 +75,22 @@ class _ResultsPageState extends State<ResultsPage> {
         return ExpansionPanel(
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
-              title: Text(item.title),
+              title: Text(item.shortTitle),
             );
           },
           body: ListTile(
-            title: Text("${item.dateApplicability}, ${item.rs}, ${item.droit}"),
+            title: Text(item.title),
+            subtitle: Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(item.rs),
+                  Text(item.droit),
+                  Text(item.dateApplicability),
+                ],
+              ),
+            ),
           ),
           isExpanded: item.isExpanded,
         );
