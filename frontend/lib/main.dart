@@ -1,17 +1,19 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const FedlexplorerApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class FedlexplorerApp extends StatelessWidget {
+  const FedlexplorerApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fedlexplorer',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,13 +26,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const FedlexplorerHomePage(title: 'Fedlexplorer'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class FedlexplorerHomePage extends StatefulWidget {
+  const FedlexplorerHomePage({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -44,11 +46,21 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<FedlexplorerHomePage> createState() => _FedlexplorerHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _FedlexplorerHomePageState extends State<FedlexplorerHomePage> {
   int _counter = 0;
+
+  getData() async {
+    final response = await http.get(Uri.parse(
+        'https://samples.openweathermap.org/data/2.5/forecast/hourly?lat=35&lon=139&appid=b1b15e88fa797225412429c1c50c122a1'));
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body);
+      print(data);
+      return data;
+    }
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -63,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    getData();
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
