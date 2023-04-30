@@ -1,5 +1,6 @@
 import falcon
 import json
+from os import environ
 from frictionless import Package
 from wsgiref.simple_server import make_server
 
@@ -28,6 +29,7 @@ for resource in package.resources:
     api.add_route("/%s" % resource.name, DataResource(resource))
 
 if __name__ == '__main__':
-    with make_server('', 8000, api) as httpd:
-        print('Serving on port 8000...')
+    port = int(environ.get('PORT', 8000))
+    with make_server('', port, api) as httpd:
+        print('Serving on port %d...' % port)
         httpd.serve_forever()
