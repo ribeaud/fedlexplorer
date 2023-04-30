@@ -17,10 +17,6 @@ class MainApp extends StatelessWidget {
       title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.home),
-          ),
           title: const Text(appTitle),
         ),
         body: const FedlexForm(),
@@ -64,6 +60,25 @@ class FedlexFormState extends State<FedlexForm> {
               }
               return null;
             },
+            decoration: const InputDecoration(
+              label: Text.rich(
+                TextSpan(
+                  children: <InlineSpan>[
+                    WidgetSpan(
+                      child: Text(
+                        'Inkrafttreten von',
+                      ),
+                    ),
+                    WidgetSpan(
+                      child: Text(
+                        '*',
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -76,7 +91,7 @@ class FedlexFormState extends State<FedlexForm> {
                   }));
                 }
               },
-              child: const Text('Submit'),
+              child: const Text('Zeigen'),
             ),
           ),
         ],
