@@ -4,14 +4,12 @@ from os import environ
 from frictionless import Package
 from wsgiref.simple_server import make_server
 
-api = falcon.App()
+MAX_RESULTS = 1000
 
 package = Package('datapackage.json')
 
-def get_paginated_json(req, df):
-    per_page = int(req.get_param('per_page', required=False, default=10))
-    page = (int(req.get_param('page', required=False, default=1))-1)*per_page
-    return df[page:page+per_page].to_json(orient='records')
+api = falcon.App()
+
 
 class DataResource:
 
@@ -29,11 +27,21 @@ class DataResource:
                     for v in vars:
                         row[v] = r[v]['value']
                     transformed.append(row)
+                    if len(transformed) > MAX_RESULTS:
+                        break
+
             resp.text = json.dumps(transformed, ensure_ascii=False)
             resp.status = falcon.HTTP_200
 
+
+
+
+# Create end-points for each Resource in the Data Package
 for resource in package.resources:
     api.add_route("/%s" % resource.name, DataResource(resource))
+
+# Create end-point for our SPARQL query
+#api.add_route("/query", DataQuery())
 
 if __name__ == '__main__':
     port = int(environ.get('PORT', 8000))

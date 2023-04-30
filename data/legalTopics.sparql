@@ -1,0 +1,14 @@
+PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT distinct ?concept ?sr (str(?deLabel) as ?de) WHERE {
+?concept a jolux:LegalTaxonomy . 
+?concept skos:notation ?srLabel .
+optional { ?concept skos:prefLabel ?deLabel . filter(lang(?deLabel) = 'de') }
+
+?concept <http://publications.europa.eu/ontology/euvoc#status> <http://publications.europa.eu/resource/authority/concept-status/CURRENT> .
+?concept <https://fedlex.data.admin.ch/vocabulary/model#legal-taxonomy-concept-type> <https://fedlex.data.admin.ch/vocabulary/legal-taxonomy-concept-type/title> .
+
+bind(str(?srLabel) as ?sr)
+}
+order by ?srLabel
