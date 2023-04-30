@@ -36,9 +36,10 @@ class FedlexForm extends StatefulWidget {
 
 class FedlexFormState extends State<FedlexForm> {
   final _formKey = GlobalKey<FormState>();
+  final fromController = TextEditingController();
 
-  getData() async {
-    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/sample'));
+  getData(var from) async {
+    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/sample?from=$from'));
     if (response.statusCode == 200) {
       return jsonDecode(utf8.decode(response.bodyBytes));
     }
@@ -62,6 +63,7 @@ class FedlexFormState extends State<FedlexForm> {
                 }
                 return null;
               },
+              controller: fromController,
               decoration: const InputDecoration(
                 label: Text.rich(
                   TextSpan(
@@ -88,7 +90,7 @@ class FedlexFormState extends State<FedlexForm> {
             child: ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  var data = await getData();
+                  var data = await getData(fromController.text);
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return ResultsPage(data: data);
                   }));
