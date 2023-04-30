@@ -2,23 +2,20 @@ import 'package:flutter/material.dart';
 
 class Item {
   Item({
-    required this.expandedValue,
-    required this.headerValue,
+    required this.dateApplicability,
+    required this.title,
     this.isExpanded = false,
   });
 
-  String expandedValue;
-  String headerValue;
+  String dateApplicability;
+  String title;
   bool isExpanded;
+
+  static Item fromJson(json) => Item(title: json['title'], dateApplicability: json['dateApplicability']);
 }
 
-List<Item> generateItems(int numberOfItems) {
-  return List<Item>.generate(numberOfItems, (int index) {
-    return Item(
-      headerValue: 'Panel $index',
-      expandedValue: 'This is item number $index',
-    );
-  });
+List<Item> generateItems(data) {
+  return data.map<Item>(Item.fromJson).toList();
 }
 
 class ResultsPage extends StatefulWidget {
@@ -31,12 +28,12 @@ class ResultsPage extends StatefulWidget {
 }
 
 class _ResultsPageState extends State<ResultsPage> {
-  final List<Item> _data = generateItems(10);
+  List<Item> _data = [];
 
   @override
   void initState() {
     super.initState();
-    print(widget.data);
+    _data = generateItems(widget.data);
   }
 
   @override
@@ -62,18 +59,10 @@ class _ResultsPageState extends State<ResultsPage> {
         return ExpansionPanel(
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
-              title: Text(item.headerValue),
+              title: Text(item.dateApplicability),
             );
           },
-          body: ListTile(
-              title: Text(item.expandedValue),
-              subtitle: const Text('To delete this panel, tap the trash can icon'),
-              trailing: const Icon(Icons.delete),
-              onTap: () {
-                setState(() {
-                  _data.removeWhere((Item currentItem) => item == currentItem);
-                });
-              }),
+          body: ListTile(title: Text(item.title)),
           isExpanded: item.isExpanded,
         );
       }).toList(),
