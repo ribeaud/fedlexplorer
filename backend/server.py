@@ -6,6 +6,7 @@ from frictionless import Package
 from wsgiref.simple_server import make_server
 
 from fedlexrdf import fedlexQuery
+from termdatapi import getDefinitions
 
 MAX_RESULTS = 1000
 
@@ -65,6 +66,21 @@ class DataQuery:
 
 # Create end-point for our SPARQL query
 api.add_route("/query", DataQuery())
+
+
+
+class TermQuery:
+
+    def on_get(self, req, resp):
+        q = req.get_param('q', required=True)
+        jsonDoc = getDefinitions(q)
+
+        resp.text = json.dumps(jsonDoc, ensure_ascii=False)
+        resp.status = falcon.HTTP_200
+
+
+# Create end-point for our SPARQL query
+api.add_route("/term", TermQuery())
 
 
 # Standalone app

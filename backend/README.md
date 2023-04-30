@@ -1,9 +1,15 @@
-Fedlex Explorer Backend
-=======================
+FEDLEXplorer Backend
+====================
 
 In this folder we will develop a simple backend to proxy the results of queries from the app frontend to the SPARQL API and other remote data sources.
 
 This repository contains a minimalist backend service API based on the [Falcon Framework](http://falconframework.org/). See this [Medium post](https://lynn-kwong.medium.com/build-apis-with-falcon-in-python-all-essentials-you-need-9e2c2a5e1759) for an introduction to the framework.
+
+We also use these great libraries to make the magic happen:
+
+- [SPARQLWrapper](https://pypi.org/project/SPARQLWrapper/) (W3C license)
+- [Frictionless](https://pypi.org/project/frictionless/) (MIT license)
+- [orjson](https://pypi.org/project/orjson/) (Apache-2.0 or MIT)
 
 ## Installation
 
@@ -30,7 +36,6 @@ You can adjust the amount of output with a `page` and `per_page` parameter in yo
 
 ## License
 
-This project is licensed by its maintainers under the MIT License.
+This project is licensed by its maintainers under both the Apache and MIT licenses.
 
-If you intended to use these data in a public or commercial product, please
-check the data sources themselves for any specific restrictions.
+To the best of our knowledge, all data included in this repository is open data. If you intended to use the included data in a public or commercial product, please check the data sources themselves for any specific and current restrictions.
