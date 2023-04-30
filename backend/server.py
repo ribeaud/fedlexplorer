@@ -20,9 +20,16 @@ class DataResource:
 
     def on_get(self, req, resp):
         if self.resource.profile == "sparql-json-resource":
+            transformed = []
             with open(self.resource.path) as f:
-                doc = json.loads(f.read())['results']
-            resp.text = json.dumps(doc, ensure_ascii=False)
+                doc = json.loads(f.read())
+                vars = doc['head']['vars']
+                for r in doc['results']['bindings']:
+                    row = {}
+                    for v in vars:
+                        row[v] = r[v]['value']
+                    transformed.append(row)
+            resp.text = json.dumps(transformed, ensure_ascii=False)
             resp.status = falcon.HTTP_200
 
 for resource in package.resources:
