@@ -35,13 +35,13 @@ class FedlexForm extends StatefulWidget {
 }
 
 class FedlexFormState extends State<FedlexForm> {
+  final List<String> list = <String>['One', 'Two', 'Three', 'Four'];
   final _formKey = GlobalKey<FormState>();
   final fromController = TextEditingController();
-  final toController = TextEditingController();
+  final untilController = TextEditingController();
 
-  getData(var from, var to) async {
-    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/query?from=$from&to=$to'));
-    print("from=$from&to=$to");
+  getData(var from, var until) async {
+    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/query?from=$from&until=$until'));
     if (response.statusCode == 200) {
       return jsonDecode(utf8.decode(response.bodyBytes));
     }
@@ -56,15 +56,15 @@ class FedlexFormState extends State<FedlexForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
+            padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 8.0),
+            child: Text(
+              "Inkrafttreten",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: TextFormField(
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Bitte ein Datum eingeben (JJJJ-MM-TT)';
-                }
-                return null;
-              },
               controller: fromController,
               decoration: const InputDecoration(
                 label: Text.rich(
@@ -72,13 +72,7 @@ class FedlexFormState extends State<FedlexForm> {
                     children: <InlineSpan>[
                       WidgetSpan(
                         child: Text(
-                          'Inkrafttreten von',
-                        ),
-                      ),
-                      WidgetSpan(
-                        child: Text(
-                          '*',
-                          style: TextStyle(color: Colors.red),
+                          'Von',
                         ),
                       ),
                     ],
@@ -90,14 +84,14 @@ class FedlexFormState extends State<FedlexForm> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: TextFormField(
-              controller: toController,
+              controller: untilController,
               decoration: const InputDecoration(
                 label: Text.rich(
                   TextSpan(
                     children: <InlineSpan>[
                       WidgetSpan(
                         child: Text(
-                          'Inkrafttreten to',
+                          'Bis',
                         ),
                       ),
                     ],
@@ -107,11 +101,33 @@ class FedlexFormState extends State<FedlexForm> {
             ),
           ),
           Padding(
+            padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 8.0),
+            child: Text(
+              "Themen",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+              child: DropdownButtonFormField<String>(
+                value: list.first,
+                icon: const Icon(Icons.arrow_downward),
+                onChanged: (String? value) {
+                  print(value);
+                },
+                items: list.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              )),
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
             child: ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  var data = await getData(fromController.text, toController.text);
+                  var data = await getData(fromController.text, untilController.text);
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return ResultsPage(data: data);
                   }));
