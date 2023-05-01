@@ -5,6 +5,7 @@ from os import environ
 from frictionless import Package
 from wsgiref.simple_server import make_server
 
+from datetime import datetime
 from fedlexrdf import fedlexQuery
 from termdatapi import getDefinitions
 
@@ -54,8 +55,14 @@ class DataQuery:
 
     def on_get(self, req, resp):
         q = req.get_param('q', required=False, default='')
-        d_from = req.get_param('from', required=False, default='2023-09-01')
-        d_until = req.get_param('until', required=False, default='9999-12-31')
+        d_from = req.get_param('from', required=False, default='')
+        d_until = req.get_param('until', required=False, default='')
+
+        # Set default to today
+        if len(d_from) < 4: d_from = datetime.now().strftime('%Y-%m-%d')
+
+        # TODO: fixme in 7976 years
+        if len(d_until) < 4: d_until = '9999-12-31' 
 
         rawData = fedlexQuery(q, d_from, d_until)
         jsonDoc = flattenMe(rawData)

@@ -1,19 +1,19 @@
 PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT distinct ?concept ?cc (str(?deLabel) as ?de)
+SELECT distinct ?concept ?conceptKey (str(?deLabel) as ?de)
 WHERE {
   ?concept a jolux:LegalTaxonomy . 
-  ?concept skos:notation ?ccLabel .
+  ?concept skos:notation ?ckLabel .
   optional { ?concept skos:prefLabel ?deLabel . filter(lang(?deLabel) = 'de') }
 
   ?concept <http://publications.europa.eu/ontology/euvoc#status> <http://publications.europa.eu/resource/authority/concept-status/CURRENT> .
   ?concept <https://fedlex.data.admin.ch/vocabulary/model#legal-taxonomy-concept-type> <https://fedlex.data.admin.ch/vocabulary/legal-taxonomy-concept-type/title> .
 
-  BIND(str(?ccLabel) AS ?cc)
+  BIND(str(?ckLabel) AS ?conceptKey)
   FILTER(
-    (regex(?cc, '^0\\..{1,2}$')) ||
-    (!strstarts(?cc, '0.') && regex(?cc, '^.{1,2}$'))
+    (regex(?conceptKey, '^0\\..{1,2}$')) ||
+    (!strstarts(?conceptKey, '0.') && regex(?conceptKey, '^.{1,2}$'))
   )
 }
-order by ?ccLabel
+order by ?ckLabel

@@ -37,6 +37,7 @@ select ?dateApplicability (str(?rsNode) as ?rs) ?droit ?title {
   FILTER(REGEX (?rsNode, ?legalTopicRegex))
 }
 order by ?dateApplicability ?rsNode
+limit 500
 '''
 
 def fedlexQuery(q, d_from, d_until):
