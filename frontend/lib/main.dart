@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+String truncateWithEllipsis(int cutoff, String myString) {
+  return (myString.length <= cutoff) ? myString : '${myString.substring(0, cutoff)}...';
+}
+
 class Topic {
   Topic({
     required this.concept,
@@ -68,9 +72,11 @@ class FedlexFormState extends State<FedlexForm> {
   final _formKey = GlobalKey<FormState>();
   final fromController = TextEditingController();
   final untilController = TextEditingController();
+  Topic? selectedTopic;
 
-  getData(var from, var until) async {
-    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/query?from=$from&until=$until'));
+  getData(var from, var until, var conceptKey) async {
+    final response =
+        await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/query?from=$from&until=$until&q=$conceptKey'));
     if (response.statusCode == 200) {
       return jsonDecode(utf8.decode(response.bodyBytes));
     }
@@ -130,7 +136,7 @@ class FedlexFormState extends State<FedlexForm> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 8.0),
+            padding: const EdgeInsets.fromLTRB(8.0, 64.0, 8.0, 8.0),
             child: Text(
               "Themen",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -139,15 +145,18 @@ class FedlexFormState extends State<FedlexForm> {
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
               child: DropdownButtonFormField<Topic>(
-                value: topics.first,
                 icon: const Icon(Icons.arrow_downward),
                 onChanged: (Topic? value) {
-                  print(value);
+                  if (value != null) {
+                    selectedTopic = value;
+                  }
                 },
                 items: topics.map<DropdownMenuItem<Topic>>((Topic value) {
                   return DropdownMenuItem<Topic>(
                     value: value,
-                    child: Text(value.de),
+                    child: Text(
+                      truncateWithEllipsis(40, "${value.conceptKey} - ${value.de}"),
+                    ),
                   );
                 }).toList(),
               )),
@@ -156,7 +165,12 @@ class FedlexFormState extends State<FedlexForm> {
             child: ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  var data = await getData(fromController.text, untilController.text);
+                  var q = selectedTopic == null ? "" : selectedTopic?.conceptKey;
+                  var data = await getData(
+                    fromController.text,
+                    untilController.text,
+                    q,
+                  );
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return ResultsPage(data: data);
                   }));
