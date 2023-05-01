@@ -55,7 +55,7 @@ class _ResultsPageState extends State<ResultsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Results')),
+      appBar: AppBar(title: const Text('Ergebnisse')),
       body: SingleChildScrollView(
         child: Container(
           child: _buildPanel(),

@@ -58,20 +58,13 @@ class FedlexFormState extends State<FedlexForm> {
           Padding(
             padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 8.0),
             child: Text(
-              "Inkrafttretten",
+              "Inkrafttreten",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: TextFormField(
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Bitte ein Datum eingeben (JJJJ-MM-TT)';
-                }
-                return null;
-              },
               controller: fromController,
               decoration: const InputDecoration(
                 label: Text.rich(
@@ -80,12 +73,6 @@ class FedlexFormState extends State<FedlexForm> {
                       WidgetSpan(
                         child: Text(
                           'Von',
-                        ),
-                      ),
-                      WidgetSpan(
-                        child: Text(
-                          '*',
-                          style: TextStyle(color: Colors.red),
                         ),
                       ),
                     ],
