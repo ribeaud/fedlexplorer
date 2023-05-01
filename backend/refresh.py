@@ -1,4 +1,5 @@
 import json
+import time
 from frictionless import Package
 
 from fedlexrdf import fedlexFetch
@@ -20,3 +21,4 @@ if __name__ == '__main__':
             freshText = json.dumps(freshJson, ensure_ascii=False)
             with open(resource.path, 'w') as f:
                 f.write(freshText)
+            time.sleep(5)
