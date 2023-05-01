@@ -6,7 +6,7 @@ select ?dateApplicability ?rs ?droit ?title {
   {
     select (str(?dateApplicabilityNode) as ?dateApplicability) ?lang ?consolidationAbstract  {
       values (?startDate ?endDate ?lang) {
-        ('2023-09-01' '2023-09-30' <http://publications.europa.eu/resource/authority/language/FRA> )
+        ('2023-01-01' '2023-12-31' <http://publications.europa.eu/resource/authority/language/FRA> )
       }
       ?consolidation a jolux:Consolidation ;
                      jolux:dateApplicability ?dateApplicabilityNode ;

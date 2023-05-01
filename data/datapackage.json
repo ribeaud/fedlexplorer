@@ -3,11 +3,11 @@
     "resources": [
         {
             "name": "sample",
-            "path": "inkrafttretten.json",
+            "path": "sample.json",
             "profile": "sparql-json-resource",
             "sources": [{
                 "title": "SPARQL query",
-                "path": "inkrafttretten.sparql"
+                "path": "sample.sparql"
             }]
         },
         {
