@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 String takeFirst(String text) {
   return text.split(" ").first;
+}
+
+getTerms(var terms) async {
+  final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/term?q=$terms'));
+  if (response.statusCode == 200) {
+    var json = jsonDecode(utf8.decode(response.bodyBytes));
+    return json.length == 0 ? "" : json[0];
+  }
 }
 
 class Item {
@@ -86,6 +96,29 @@ class _ResultsPageState extends State<ResultsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(item.droit),
+                  ElevatedButton(
+                    onPressed: () async {
+                      String content = await getTerms(item.title);
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Terme'),
+                          content: Text(content),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Cancel'),
+                              child: const Text('Cancel'),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                    child: const Text('Terme'),
+                  )
                 ],
               ),
             ),
