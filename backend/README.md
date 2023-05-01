@@ -33,9 +33,3 @@ Test the API using a REST client such as [RESTer](https://github.com/frigus02/RE
 `http://localhost:8000/[my resource name]?[column]=[query]`
 
 You can adjust the amount of output with a `page` and `per_page` parameter in your query.
-
-## License
-
-This project is licensed by its maintainers under both the Apache and MIT licenses.
-
-To the best of our knowledge, all data included in this repository is open data. If you intended to use the included data in a public or commercial product, please check the data sources themselves for any specific and current restrictions.
