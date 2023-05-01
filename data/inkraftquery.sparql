@@ -24,7 +24,7 @@ select ?dateApplicability (str(?rsNode) as ?rs) ?droit ?title {
                 jolux:title ?title .
   }
   #filter(datatype(?rsNode) = <https://fedlex.data.admin.ch/vocabulary/notation-type/id-systematique>)
-  bind(if(strstarts(?rs, '0.'), 'International', 'National') as ?droit)
+  bind(if(strstarts(?rsNode, '0.'), 'International', 'National') as ?droit)
   
   FILTER(REGEX (?rsNode, ?legalTopicRegex))
 }
