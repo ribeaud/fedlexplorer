@@ -21,7 +21,19 @@ class Topic {
       );
 }
 
-void main() => runApp(const MainApp());
+List<Topic> topics = <Topic>[];
+
+getTopics() async {
+  final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/topics'));
+  if (response.statusCode == 200) {
+    return jsonDecode(utf8.decode(response.bodyBytes));
+  }
+}
+
+Future<void> main() async {
+  topics = (await getTopics()).map<Topic>(Topic.fromJson).toList();
+  runApp(const MainApp());
+}
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -53,7 +65,6 @@ class FedlexForm extends StatefulWidget {
 }
 
 class FedlexFormState extends State<FedlexForm> {
-  List<String> topics = <String>[];
   final _formKey = GlobalKey<FormState>();
   final fromController = TextEditingController();
   final untilController = TextEditingController();
@@ -63,19 +74,6 @@ class FedlexFormState extends State<FedlexForm> {
     if (response.statusCode == 200) {
       return jsonDecode(utf8.decode(response.bodyBytes));
     }
-  }
-
-  getTopics() async {
-    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/topics'));
-    if (response.statusCode == 200) {
-      return jsonDecode(utf8.decode(response.bodyBytes));
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    topics = ['One', 'Two', 'Three', 'Four'];
   }
 
   @override
@@ -140,16 +138,16 @@ class FedlexFormState extends State<FedlexForm> {
           ),
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
-              child: DropdownButtonFormField<String>(
+              child: DropdownButtonFormField<Topic>(
                 value: topics.first,
                 icon: const Icon(Icons.arrow_downward),
-                onChanged: (String? value) {
+                onChanged: (Topic? value) {
                   print(value);
                 },
-                items: topics.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
+                items: topics.map<DropdownMenuItem<Topic>>((Topic value) {
+                  return DropdownMenuItem<Topic>(
                     value: value,
-                    child: Text(value),
+                    child: Text(value.de),
                   );
                 }).toList(),
               )),
