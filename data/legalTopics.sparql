@@ -1,9 +1,10 @@
 PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX isChildOf: <http://www.w3.org/2004/02/skos/core#broader>
 
-SELECT distinct ?concept ?conceptKey (str(?deLabel) as ?de)
+SELECT distinct ?concept ?conceptKey (str(?deLabel) as ?de) ?level (str(?parentLabel) AS ?parentKey)
 WHERE {
-  ?concept a jolux:LegalTaxonomy . 
+  ?concept a jolux:LegalTaxonomy .
   ?concept skos:notation ?ckLabel .
   optional { ?concept skos:prefLabel ?deLabel . filter(lang(?deLabel) = 'de') }
 
@@ -11,9 +12,18 @@ WHERE {
   ?concept <https://fedlex.data.admin.ch/vocabulary/model#legal-taxonomy-concept-type> <https://fedlex.data.admin.ch/vocabulary/legal-taxonomy-concept-type/title> .
 
   BIND(str(?ckLabel) AS ?conceptKey)
+  BIND(if (strlen(?conceptKey)=1 || strlen(?conceptKey)=3, "1", "2") as ?level)
+
   FILTER(
     (regex(?conceptKey, '^0\\..{1,2}$')) ||
     (!strstarts(?conceptKey, '0.') && regex(?conceptKey, '^.{1,2}$'))
   )
+
+  OPTIONAL{
+    ?conceptParent a jolux:LegalTaxonomy .
+    OPTIONAL { ?conceptParent skos:notation ?parentLabel }
+    ?concept isChildOf: ?conceptParent
+  }
+
 }
 order by ?ckLabel
