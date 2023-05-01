@@ -40,7 +40,7 @@ class FedlexFormState extends State<FedlexForm> {
   final toController = TextEditingController();
 
   getData(var from, var to) async {
-    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/query?from=$from&to=$to'));
+    final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/query?from=$from&until=$to'));
     print("from=$from&to=$to");
     if (response.statusCode == 200) {
       return jsonDecode(utf8.decode(response.bodyBytes));
