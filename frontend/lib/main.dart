@@ -155,7 +155,7 @@ class FedlexFormState extends State<FedlexForm> {
                   return DropdownMenuItem<Topic>(
                     value: value,
                     child: Text(
-                      truncateWithEllipsis(40, "${value.conceptKey} - ${value.de}"),
+                      truncateWithEllipsis(35, "${value.conceptKey} - ${value.de}"),
                     ),
                   );
                 }).toList(),
