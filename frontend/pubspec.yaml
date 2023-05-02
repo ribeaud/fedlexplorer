@@ -1,8 +1,9 @@
 name: fedlexplorer
-description: A new Flutter project.
+description: The purpose of this project is to demonstrate how Swiss federal legislation
+  data can be used in third-party products through a SPARQL endpoint.
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 0.0.2
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
