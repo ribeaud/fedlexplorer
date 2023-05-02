@@ -22,7 +22,7 @@ Our small (please do not hammer) hackathon API is deployed here for testing:
 
 `/topics` ([demo](http://fedlexplorer.openlegallab.ch/topics))
 
-- Gets the list of current legal topics.
+- Gets the list of current legal topics. Output example can be found in `frontend/test/topics`.
 
 **Query**
 
@@ -32,13 +32,13 @@ Our small (please do not hammer) hackathon API is deployed here for testing:
 - The `q` query is a list of topics, with IDs from the **Topics** above, separated by the pipe (|) character.
 - `from` and `until` are dates in the format YYYY-MM-DD
 
+Output example can be found in `frontend/test/data`.
+
 **Terms**
 
 `/term?q=<text>` ([demo](http://fedlexplorer.openlegallab.ch/term?q=UVEK))
 
 - Gets the top result from a TERMDAT search. Tap on a word or highlight a phrase in the app and get a little definition pop-up.
-
-
 
 # License
 

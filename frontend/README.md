@@ -1,16 +1,23 @@
-# fedlexplorer
+# FEDLEXplorer
 
-A new Flutter project.
+The **frontend** based on [Flutter](https://docs.flutter.dev/).
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Following **Flutter** environments are currently supported: `web`, `macos`, `android` and `ios`
+(NOT tested yet).
 
-A few resources to get you started if this is your first Flutter project:
+Assuming you are sitting behind a **macos** machine, running the application is as easy
+as triggering following command `flutter run lib/main_app.dart`.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### web
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Because we are triggering `HTTP` requests (instead of `HTTPS`), you will need to perform
+following [modifications](https://stackoverflow.com/a/66879350) if you want to run
+the application in **Chrome**.
+
+### NO Android Studio
+
+[Instructions](https://gist.github.com/ullaskunder3/385cb078ff31cedf239ce65e64f605dd) for people
+who don't want to overload their hard-disk when installing **Flutter**,  but still have a decent
+`DEV` environment.

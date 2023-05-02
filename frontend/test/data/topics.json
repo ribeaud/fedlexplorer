@@ -1,0 +1,682 @@
+[
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1",
+    "conceptKey": "0.1",
+    "de": "Internationales Recht im Allgemeinen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2",
+    "conceptKey": "0.10",
+    "de": "Menschenrechte und Grundfreiheiten"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/38",
+    "conceptKey": "0.11",
+    "de": "Recht der Verträge"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/40",
+    "conceptKey": "0.12",
+    "de": "Internationale Zusammenarbeit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/47",
+    "conceptKey": "0.13",
+    "de": "Eidgenossenschaft. Kantone. Nachbarstaaten"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/110",
+    "conceptKey": "0.14",
+    "de": "Staatsangehörigkeit. Niederlassung und Aufenthalt"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/467",
+    "conceptKey": "0.17",
+    "de": "Beglaubigung. Staatshaftung. Öffentliches Beschaffungswesen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/483",
+    "conceptKey": "0.18",
+    "de": "Staat und Kirche"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/487",
+    "conceptKey": "0.19",
+    "de": "Diplomatische und konsularische Beziehungen. Sondermissionen. Internationale Organisationen. Regelung von Streitigkeiten. Weitergeltung von Verträgen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/815",
+    "conceptKey": "0.2",
+    "de": "Privatrecht - Zivilrechtspflege - Vollstreckung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/816",
+    "conceptKey": "0.20",
+    "de": "Internationale Organisationen des Privatrechts"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/820",
+    "conceptKey": "0.21",
+    "de": "Personen-, Familien-, Erb- und Sachenrecht"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/878",
+    "conceptKey": "0.22",
+    "de": "Obligationenrecht"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/900",
+    "conceptKey": "0.23",
+    "de": "Geistiges Eigentum"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1173",
+    "conceptKey": "0.24",
+    "de": "Unlauterer Wettbewerb"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1188",
+    "conceptKey": "0.25",
+    "de": "Wettbewerbspolitik"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1191",
+    "conceptKey": "0.27",
+    "de": "Zivilrechtspflege"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1288",
+    "conceptKey": "0.28",
+    "de": "Schuldbetreibung und Konkurs"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1291",
+    "conceptKey": "0.3",
+    "de": "Strafrecht - Rechtshilfe"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1292",
+    "conceptKey": "0.31",
+    "de": "Unterdrückung von bestimmten Verbrechen und Vergehen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1336",
+    "conceptKey": "0.34",
+    "de": "Strafvollzug"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1350",
+    "conceptKey": "0.35",
+    "de": "Rechtshilfe und Auslieferung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1474",
+    "conceptKey": "0.36",
+    "de": "Zusammenarbeit der Polizeibehörden"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1618",
+    "conceptKey": "0.4",
+    "de": "Schule - Wissenschaft - Kultur"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1619",
+    "conceptKey": "0.40",
+    "de": "Allgemeine Abkommen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1624",
+    "conceptKey": "0.41",
+    "de": "Schule"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1659",
+    "conceptKey": "0.42",
+    "de": "Wissenschaft und Forschung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1787",
+    "conceptKey": "0.43",
+    "de": "Dokumentation"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1794",
+    "conceptKey": "0.44",
+    "de": "Sprache. Kunst. Kultur"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1835",
+    "conceptKey": "0.45",
+    "de": "Schutz von Natur, Landschaft und Tieren"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1859",
+    "conceptKey": "0.46",
+    "de": "Schutz von Kulturgut bei bewaffneten Konflikten"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1861",
+    "conceptKey": "0.5",
+    "de": "Krieg und Neutralität"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1862",
+    "conceptKey": "0.51",
+    "de": "Militärische Verteidigung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1973",
+    "conceptKey": "0.52",
+    "de": "Bevölkerungs- und Zivilschutz"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1980",
+    "conceptKey": "0.6",
+    "de": "Finanzen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/1981",
+    "conceptKey": "0.63",
+    "de": "Zollwesen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2458",
+    "conceptKey": "0.64",
+    "de": "Steuern"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2483",
+    "conceptKey": "0.65",
+    "de": "Informationsaustausch in Steuersachen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2519",
+    "conceptKey": "0.67",
+    "de": "Doppelbesteuerung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2697",
+    "conceptKey": "0.7",
+    "de": "Öffentliche Werke - Energie - Verkehr"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2698",
+    "conceptKey": "0.70",
+    "de": "Raumplanung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2703",
+    "conceptKey": "0.72",
+    "de": "Öffentliche Werke"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2746",
+    "conceptKey": "0.73",
+    "de": "Energie"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/2801",
+    "conceptKey": "0.74",
+    "de": "Verkehr"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3319",
+    "conceptKey": "0.78",
+    "de": "Post- und Fernmeldeverkehr"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3399",
+    "conceptKey": "0.79",
+    "de": "Weltraumrecht"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3405",
+    "conceptKey": "0.8",
+    "de": "Gesundheit - Arbeit - Soziale Sicherheit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3406",
+    "conceptKey": "0.81",
+    "de": "Gesundheit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3594",
+    "conceptKey": "0.82",
+    "de": "Arbeit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3685",
+    "conceptKey": "0.83",
+    "de": "Soziale Sicherheit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3980",
+    "conceptKey": "0.85",
+    "de": "Fürsorge"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3995",
+    "conceptKey": "0.9",
+    "de": "Wirtschaft - Technische Zusammenarbeit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/3996",
+    "conceptKey": "0.91",
+    "de": "Landwirtschaft"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4069",
+    "conceptKey": "0.92",
+    "de": "Forstwesen. Jagd. Fischerei"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4098",
+    "conceptKey": "0.93",
+    "de": "Industrie und Gewerbe"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4111",
+    "conceptKey": "0.94",
+    "de": "Handel"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4342",
+    "conceptKey": "0.95",
+    "de": "Kredit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4347",
+    "conceptKey": "0.96",
+    "de": "Versicherung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4355",
+    "conceptKey": "0.97",
+    "de": "Entwicklung und Zusammenarbeit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4700",
+    "conceptKey": "0.98",
+    "de": "Entschädigung schweizerischer Interessen. Washingtoner Abkommen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4711",
+    "conceptKey": "0.99",
+    "de": "Wirtschaftsstatistik"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4713",
+    "conceptKey": "1",
+    "de": "Staat - Volk - Behörden"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4714",
+    "conceptKey": "10",
+    "de": "Bundesverfassung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4723",
+    "conceptKey": "11",
+    "de": "Wappen. Bundessitz. Bundesfeiertag"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4734",
+    "conceptKey": "12",
+    "de": "Sicherheit der Eidgenossenschaft"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4776",
+    "conceptKey": "13",
+    "de": "Bund und Kantone"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4839",
+    "conceptKey": "14",
+    "de": "Bürgerrecht. Niederlassung. Aufenthalt"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4914",
+    "conceptKey": "15",
+    "de": "Grundrechte"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4939",
+    "conceptKey": "16",
+    "de": "Politische Rechte"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/4958",
+    "conceptKey": "17",
+    "de": "Bundesbehörden"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/5660",
+    "conceptKey": "18",
+    "de": "Staat und Kirche"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/5666",
+    "conceptKey": "19",
+    "de": "Auswärtige Angelegenheiten"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/5701",
+    "conceptKey": "2",
+    "de": "Privatrecht - Zivilrechtspflege - Vollstreckung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/5702",
+    "conceptKey": "21",
+    "de": "Zivilgesetzbuch"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/5817",
+    "conceptKey": "22",
+    "de": "Obligationenrecht"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/5948",
+    "conceptKey": "23",
+    "de": "Geistiges Eigentum und Datenschutz"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6121",
+    "conceptKey": "24",
+    "de": "Unlauterer Wettbewerb"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6126",
+    "conceptKey": "25",
+    "de": "Kartelle"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6135",
+    "conceptKey": "27",
+    "de": "Zivilrechtspflege"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6147",
+    "conceptKey": "28",
+    "de": "Schuldbetreibung und Konkurs"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6185",
+    "conceptKey": "29",
+    "de": "Internationales Privatrecht"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6193",
+    "conceptKey": "3",
+    "de": "Strafrecht - Strafrechtspflege - Strafvollzug"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6194",
+    "conceptKey": "31",
+    "de": "Bürgerliches Strafrecht"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6240",
+    "conceptKey": "32",
+    "de": "Militärstrafrecht"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6256",
+    "conceptKey": "33",
+    "de": "Strafregister"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6260",
+    "conceptKey": "34",
+    "de": "Strafvollzug"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6275",
+    "conceptKey": "35",
+    "de": "Rechtshilfe. Auslieferung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6299",
+    "conceptKey": "36",
+    "de": "Polizeikoordination und Dienstleistungen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6330",
+    "conceptKey": "37",
+    "de": "Flüchtlingshelferinnen und -helfer zur Zeit des Nationalsozialismus"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6332",
+    "conceptKey": "4",
+    "de": "Schule - Wissenschaft - Kultur"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6333",
+    "conceptKey": "41",
+    "de": "Schule"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6863",
+    "conceptKey": "42",
+    "de": "Wissenschaft und Forschung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/6943",
+    "conceptKey": "43",
+    "de": "Dokumentation"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7099",
+    "conceptKey": "44",
+    "de": "Sprache. Kunst. Kultur"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7165",
+    "conceptKey": "45",
+    "de": "Schutz von Natur, Landschaft und Tieren"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7225",
+    "conceptKey": "46",
+    "de": "Schutz der Kulturgüter bei bewaffneten Konflikten"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7227",
+    "conceptKey": "5",
+    "de": "Landesverteidigung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7228",
+    "conceptKey": "50",
+    "de": "Landesverteidigung in Allgemein"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7239",
+    "conceptKey": "51",
+    "de": "Militärische Verteidigung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7589",
+    "conceptKey": "52",
+    "de": "Bevölkerungs- und Zivilschutz"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7640",
+    "conceptKey": "53",
+    "de": "Wirtschaftliche Landesversorgung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7743",
+    "conceptKey": "6",
+    "de": "Finanzen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7744",
+    "conceptKey": "61",
+    "de": "Organisation im Allgemeinen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7805",
+    "conceptKey": "62",
+    "de": "Münzwesen. Schweizerische Nationalbank"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/7810",
+    "conceptKey": "63",
+    "de": "Zollwesen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8070",
+    "conceptKey": "64",
+    "de": "Steuern"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8220",
+    "conceptKey": "65",
+    "de": "Informationsaustausch in Steuersachen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8231",
+    "conceptKey": "66",
+    "de": "Wehrpflichtersatz"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8238",
+    "conceptKey": "67",
+    "de": "Ausschluss von Steuerabkommen. Doppelbesteuerung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8312",
+    "conceptKey": "68",
+    "de": "Alkoholmonopol"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8347",
+    "conceptKey": "69",
+    "de": "Salzregal"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8349",
+    "conceptKey": "7",
+    "de": "Öffentliche Werke - Energie - Verkehr"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8350",
+    "conceptKey": "70",
+    "de": "Landes-, Regional- und Ortsplanung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8368",
+    "conceptKey": "71",
+    "de": "Enteignung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8395",
+    "conceptKey": "72",
+    "de": "Öffentliche Werke"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8493",
+    "conceptKey": "73",
+    "de": "Energie"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/8601",
+    "conceptKey": "74",
+    "de": "Verkehr"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/9115",
+    "conceptKey": "78",
+    "de": "Post- und Fernmeldeverkehr"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/9225",
+    "conceptKey": "8",
+    "de": "Gesundheit - Arbeit - Soziale Sicherheit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/9226",
+    "conceptKey": "81",
+    "de": "Gesundheit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/9855",
+    "conceptKey": "82",
+    "de": "Arbeit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/9991",
+    "conceptKey": "83",
+    "de": "Sozialversicherung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/10327",
+    "conceptKey": "84",
+    "de": "Wohnverhältnisse"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/10357",
+    "conceptKey": "85",
+    "de": "Fürsorge"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/10379",
+    "conceptKey": "86",
+    "de": "Schutz der Familie"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/10385",
+    "conceptKey": "9",
+    "de": "Wirtschaft - Technische Zusammenarbeit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/10386",
+    "conceptKey": "90",
+    "de": "Regionalpolitik"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/10399",
+    "conceptKey": "91",
+    "de": "Landwirtschaft"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/10956",
+    "conceptKey": "92",
+    "de": "Forstwesen. Jagd. Fischerei"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/11017",
+    "conceptKey": "93",
+    "de": "Industrie und Gewerbe"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/11137",
+    "conceptKey": "94",
+    "de": "Handel"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/11498",
+    "conceptKey": "95",
+    "de": "Kredit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/11631",
+    "conceptKey": "96",
+    "de": "Versicherung"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/11678",
+    "conceptKey": "97",
+    "de": "Internationale wirtschaftliche und technische Zusammenarbeit"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/11719",
+    "conceptKey": "98",
+    "de": "Entschädigung schweizerischer Interessen"
+  },
+  {
+    "concept": "https://fedlex.data.admin.ch/vocabulary/legal-taxonomy/11732",
+    "conceptKey": "99",
+    "de": "Wirtschaftsstatistik"
+  }
+]
