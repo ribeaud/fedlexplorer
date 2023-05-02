@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -35,6 +36,16 @@ class _MainAppState extends State<MainApp> {
     const appTitle = 'FEDLEXplorer';
 
     return MaterialApp(
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('de', 'CH'),
+        Locale('fr', 'CH'),
+        Locale('en', 'CH'),
+      ],
       theme: ThemeData(
         primarySwatch: Colors.red,
         scaffoldBackgroundColor: Colors.white,

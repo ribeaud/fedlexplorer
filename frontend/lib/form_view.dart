@@ -1,6 +1,7 @@
 import 'package:fedlexplorer/results_view.dart';
 import 'package:fedlexplorer/utilities.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -44,9 +45,9 @@ class FedlexForm extends StatefulWidget {
 }
 
 class FedlexFormState extends State<FedlexForm> {
-  static final Duration diff = Duration(days: 366 * 100);
-  final DateTime _firstDate = DateTime.now().subtract(diff);
-  final DateTime _lastDate = DateTime.now().add(diff);
+  final DateFormat _dateFormat = DateFormat('yyyy-MM-dd');
+  final DateTime _firstDate = DateTime(1970, 1, 1);
+  final DateTime _lastDate = DateTime(DateTime.now().year + 100);
   final _formKey = GlobalKey<FormState>();
   final _fromController = TextEditingController();
   final _untilController = TextEditingController();
@@ -55,16 +56,14 @@ class FedlexFormState extends State<FedlexForm> {
   Future<void> _selectDate(final BuildContext context, final TextEditingController controller) async {
     final DateTime? picked = await showDatePicker(
       context: context,
+      locale: const Locale('de', 'CH'),
+      initialEntryMode: DatePickerEntryMode.calendarOnly,
       initialDate: DateTime.now(),
       firstDate: _firstDate,
       lastDate: _lastDate,
     );
     setState(() {
-      if (picked != null) {
-        controller.text = "${picked.year}-${picked.month}-${picked.day}";
-      } else {
-        controller.text = "";
-      }
+      controller.text = picked != null ? _dateFormat.format(picked) : "";
     });
   }
 
@@ -77,6 +76,7 @@ class FedlexFormState extends State<FedlexForm> {
       },
       controller: controller,
       decoration: InputDecoration(
+        suffixIcon: Icon(Icons.calendar_month),
         label: Text.rich(
           TextSpan(
             children: <InlineSpan>[
