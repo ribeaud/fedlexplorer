@@ -1,17 +1,16 @@
+import 'package:fedlexplorer/utilities.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:collection/collection.dart';
 import 'package:http/http.dart' as http;
 
-String takeFirst(String text) {
-  return text.split(" ").first;
-}
-
-getTerms(var terms) async {
-  final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/term?q=$terms'));
+Future<String> getTerms(String input) async {
+  final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/term?q=$input'));
   if (response.statusCode == 200) {
-    var json = jsonDecode(utf8.decode(response.bodyBytes));
-    return json.length == 0 ? "" : json[0];
+    List<String> json = (jsonDecode(utf8.decode(response.bodyBytes)) as List<dynamic>).cast<String>();
+    return json.firstOrNull ?? "";
   }
+  throw Exception("Failed to load the terms!");
 }
 
 class Item {
@@ -40,26 +39,22 @@ class Item {
       );
 }
 
-List<Item> generateItems(data) {
-  return data.map<Item>(Item.fromJson).toList();
-}
-
 class ResultsPage extends StatefulWidget {
-  final data;
+  final List<Item> data;
 
-  const ResultsPage({super.key, this.data});
+  const ResultsPage({super.key, required this.data});
 
   @override
   State<ResultsPage> createState() => _ResultsPageState();
 }
 
 class _ResultsPageState extends State<ResultsPage> {
-  List<Item> _data = [];
+  late List<Item> _data = [];
 
   @override
   void initState() {
     super.initState();
-    _data = generateItems(widget.data);
+    _data = widget.data;
   }
 
   @override
@@ -103,12 +98,8 @@ class _ResultsPageState extends State<ResultsPage> {
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
                           title: const Text('Terme'),
-                          content: Text(content),
+                          content: Text(content.isEmpty ? "(kein Term)" : content),
                           actions: <Widget>[
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, 'Cancel'),
-                              child: const Text('Cancel'),
-                            ),
                             TextButton(
                               onPressed: () => Navigator.pop(context, 'OK'),
                               child: const Text('OK'),
