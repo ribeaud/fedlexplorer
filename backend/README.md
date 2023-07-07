@@ -1,5 +1,4 @@
-FEDLEXplorer Backend
-====================
+# FEDLEXplorer Backend
 
 In this folder we will develop a simple backend to proxy the results of queries from the app frontend to the SPARQL API and other remote data sources.
 
@@ -16,9 +15,8 @@ We also use these great libraries to make the magic happen:
 To run:
 
 ```
-cd api
-virtualenv env
-. env/bin/activate
+python -m venv venv
+source venv/bin/activate
 pip install -Ur requirements.txt
 cd ../data
 python ../backend/server.py

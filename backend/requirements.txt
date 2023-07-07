@@ -1,2 +1,3 @@
 falcon
-frictionless
+frictionless>=4,<5
+sparqlwrapper

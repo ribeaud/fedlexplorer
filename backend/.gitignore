@@ -3,6 +3,7 @@ Pipfile*
 
 # Common ignores
 node_modules/
+venv/
 package-lock.json
 yarn.lock
 *.py[cod]

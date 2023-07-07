@@ -46,6 +46,7 @@ class DataResource:
 
 
 # Create end-points for each Resource in the Data Package
+# `/topics` endpoint needed by the frontend is defined here
 for resource in package.resources:
     api.add_route("/%s" % resource.name, DataResource(resource))
 
