@@ -31,3 +31,14 @@ Test the API using a REST client such as [RESTer](https://github.com/frigus02/RE
 `http://localhost:8000/[my resource name]?[column]=[query]`
 
 You can adjust the amount of output with a `page` and `per_page` parameter in your query.
+
+## Docker
+
+To run:
+
+```
+docker build -t fedlexplorer:v0.0.1 .
+docker run -d -p 80:8000 --name fedlexplorer -it fedlexplorer:v0.0.1
+```
+
+Then access the server at http://localhost/.
