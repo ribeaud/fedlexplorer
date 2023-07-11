@@ -7,8 +7,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 Future<List<Item>> fetchData(String? from, String? until, String? conceptKey) async {
-  final response =
-      await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/query?from=$from&until=$until&q=$conceptKey'));
+  final response = await http
+      .get(Uri.parse('https://bk-fedlexplorer-dev.k8s.karakun.com/query?from=$from&until=$until&q=$conceptKey'));
   if (response.statusCode == 200) {
     return jsonDecode(utf8.decode(response.bodyBytes)).map<Item>(Item.fromJson).toList();
   }

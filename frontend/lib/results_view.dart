@@ -5,7 +5,7 @@ import 'package:collection/collection.dart';
 import 'package:http/http.dart' as http;
 
 Future<String> getTerms(String input) async {
-  final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/term?q=$input'));
+  final response = await http.get(Uri.parse('https://bk-fedlexplorer-dev.k8s.karakun.com/term?q=$input'));
   if (response.statusCode == 200) {
     List<String> json = (jsonDecode(utf8.decode(response.bodyBytes)) as List<dynamic>).cast<String>();
     return json.firstOrNull ?? "";

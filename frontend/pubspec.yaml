@@ -1,12 +1,13 @@
 name: fedlexplorer
-description: The purpose of this project is to demonstrate how Swiss federal legislation
+description:
+  The purpose of this project is to demonstrate how Swiss federal legislation
   data can be used in third-party products through a SPARQL endpoint.
-publish_to: 'none'
+publish_to: "none"
 
-version: 0.0.2
+version: 0.0.3
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: ">=2.19.6 <3.0.0"
 
 dependencies:
   flutter:

@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'form_view.dart';
 
 Future<List<Topic>> fetchTopics() async {
-  final response = await http.get(Uri.parse('http://fedlexplorer.openlegallab.ch/topics'));
+  final response = await http.get(Uri.parse('https://bk-fedlexplorer-dev.k8s.karakun.com/topics'));
   if (response.statusCode == 200) {
     return jsonDecode(utf8.decode(response.bodyBytes)).map<Topic>(Topic.fromJson).toList();
   }
