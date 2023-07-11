@@ -37,8 +37,19 @@ You can adjust the amount of output with a `page` and `per_page` parameter in yo
 To run:
 
 ```
-docker build -t fedlexplorer:v0.0.1 .
-docker run -d -p 80:8000 --name fedlexplorer -it fedlexplorer:v0.0.1
+docker build -t fedlexplorer-backend:latest .
+docker run -d -p 80:8000 --name fedlexplorer-backend -it fedlexplorer-backend
 ```
 
 Then access the server at http://localhost/.
+
+## Kubernetes
+
+### Local
+
+1. Follow the instructions given [here](https://minikube.sigs.k8s.io/docs/handbook/pushing/#1-pushing-directly-to-the-in-cluster-docker-daemon-docker-env) to directly push the images to the `in-cluster` **Docker** daemon (`docker-env` - assuming you're using **minikube**)
+1. Build the image as described above
+1. `kubectl apply -f k8s.yml`. The service is listening on port `80` (the pods however are using port `8000`).
+1. `kubectl port-forward service/fedlexplorer-backend 8080:80` to access **fedlexplorer-backend** on port `8080`.
+
+Then access the server at http://localhost:8080/.
