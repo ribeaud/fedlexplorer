@@ -18,10 +18,19 @@ spec:
         app: fedlexplorer
         component: backend
     spec:
+      securityContext:
+        runAsUser: 1000
       containers:
         - name: fedlexplorer-backend
           image: ghcr.io/ribeaud/fedlexplorer-backend:latest
           imagePullPolicy: IfNotPresent
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
           ports:
             - containerPort: 8000
 ---
